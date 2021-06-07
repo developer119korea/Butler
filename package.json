@@ -8,10 +8,10 @@
   "name": "butler",
   "description": "키튼플래닛의 챗봇",
   "version": "1.0.0",
-  "main": "/src/index.js",
+  "main": "/src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.js"
+    "start": "node src/app.js"
   },
   "repository": {
     "type": "git",
