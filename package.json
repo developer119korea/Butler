@@ -1,7 +1,9 @@
 {
   "dependencies": {
     "chromedriver": "^90.0.1",
-    "selenium-webdriver": "*"
+    "googleapis": "^75.0.0",
+    "selenium-webdriver": "*",
+    "unirest": "^0.6.0"
   },
   "name": "butler",
   "description": "키튼플래닛의 챗봇",

@@ -9,9 +9,8 @@ const iganepork = require("./iganepork");
 const sleep = (waitTimeInMs) => new Promise(resolve => setTimeout(resolve, waitTimeInMs));
 const kAwaitMilliSecondWebPageLoading = 3000;
 
-console.log("start");
 
-const start = async () => {
+module.exports.fetchTodayLaunchMenu = async () => {
   const service = new chrome.ServiceBuilder(chrome_driver.path).build();
   chrome.setDefaultService(service);
   const driver = await new webdriver.Builder().forBrowser('chrome').build();
@@ -28,6 +27,6 @@ const start = async () => {
 
   await driver.close();
   await driver.quit();
-}
 
-// start();
+  return launchMenuImageUrl;
+}
