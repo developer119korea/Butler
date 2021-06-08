@@ -11,7 +11,7 @@ const kSelectorImage = "body > div._2dDPU.CkGkG > div.zZYga > div > article > di
 
 const sleep = (waitTimeInMs) => new Promise(resolve => setTimeout(resolve, waitTimeInMs));
 
-module.exports.fetchTodayLaunchMenuUrl = async (driver) => {
+module.exports.fetchTodayLaunchMenu = async (driver) => {
   await driver.get('https://www.instagram.com/iganepork/');
   await sleep(kAwaitMilliSecondWebPageLoading);
 
@@ -40,7 +40,12 @@ module.exports.fetchTodayLaunchMenuUrl = async (driver) => {
     // 점심메뉴 게시글이라면 메뉴 사진 Url추출
     if (isLaunchMenuArticle) {
       const imageUrl = await getLaunchMenuImageUrl(driver);
-      return imageUrl;
+      const pageUrl = await driver.getCurrentUrl();
+      const menuContent = {
+        pageUrl: pageUrl,
+        imageUrl: imageUrl
+      }
+      return menuContent;
     }
     else {
       isClickedNextArticle = await clickNextArticleButton(driver);

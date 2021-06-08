@@ -7,12 +7,15 @@ const gkeys = require('../butler-316109-cc49583efdf2.json');
 
 async function NotifyLauchMenu() {
   const googleChatRoomID = config.google_chat_room_id;
-  const pageUrl = 'https://www.instagram.com/iganepork/';
-  const imageUrl = await crawler.fetchTodayLaunchMenu();
+  const googleChatThreadID = config.google_chat_thread_id;
   const iconUrl = config.google_chat_lauch_menu_icon;
 
+  const menuContent = await crawler.fetchTodayLaunchMenu();
+  const pageUrl = menuContent.pageUrl;
+  const imageUrl = menuContent.imageUrl;
+
   if (imageUrl) {
-    postMessage(googleChatRoomID, pageUrl, imageUrl, iconUrl);
+    postMessage(googleChatRoomID, googleChatThreadID, pageUrl, imageUrl, iconUrl);
   } else {
     console.log('Fail FetchTodayLaunchMenu');
   }
@@ -36,10 +39,10 @@ function getJWT() {
   });
 }
 
-function postMessage(roomID, pageUrl, imageUrl, iconUrl) {
+function postMessage(roomID, threadID, pageUrl, imageUrl, iconUrl) {
   return new Promise(function (resolve, reject) {
     getJWT().then(function (token) {
-      unirest.post(`https://chat.googleapis.com/v1/spaces/${roomID}/messages`)
+      unirest.post(`https://chat.googleapis.com/v1/spaces/${roomID}/messages?thread_key=${threadID}`)
         .headers({
           "Content-Type": "application/json",
           "Authorization": "Bearer " + token

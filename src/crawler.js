@@ -22,11 +22,11 @@ module.exports.fetchTodayLaunchMenu = async () => {
 
   await sleep(kAwaitMilliSecondWebPageLoading);
 
-  const launchMenuImageUrl = await iganepork.fetchTodayLaunchMenuUrl(driver);
-  console.log(launchMenuImageUrl);
+  const menuContent = await iganepork.fetchTodayLaunchMenu(driver);
+  console.log('pageUrl : ', menuContent.pageUrl, '\n', 'imageUrl :', menuContent.imageUrl);
 
   await driver.close();
   await driver.quit();
 
-  return launchMenuImageUrl;
+  return menuContent;
 }
