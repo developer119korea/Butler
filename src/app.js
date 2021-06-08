@@ -10,7 +10,12 @@ async function NotifyLauchMenu() {
   const pageUrl = 'https://www.instagram.com/iganepork/';
   const imageUrl = await crawler.fetchTodayLaunchMenu();
   const iconUrl = config.google_chat_lauch_menu_icon;
-  postMessage(googleChatRoomID, pageUrl, imageUrl, iconUrl);
+
+  if (imageUrl) {
+    postMessage(googleChatRoomID, pageUrl, imageUrl, iconUrl);
+  } else {
+    console.log('Fail FetchTodayLaunchMenu');
+  }
 }
 
 function getJWT() {
