@@ -13,6 +13,7 @@
   - googleapis v75.0.0
   - selenium-webdriver v4.0.0-beta.3
   - unirest v0.6.0
+  - node-schedule@2.0.0
   
 # How to Run?
 ```sh

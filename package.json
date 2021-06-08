@@ -2,6 +2,7 @@
   "dependencies": {
     "chromedriver": "^90.0.1",
     "googleapis": "^75.0.0",
+    "node-schedule": "^2.0.0",
     "selenium-webdriver": "*",
     "unirest": "^0.6.0"
   },
