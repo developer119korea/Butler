@@ -40,3 +40,9 @@ module.exports.card = function (pageUrl, imageUrl, iconUrl) {
     ],
   };
 }
+
+module.exports.text = function (text) {
+  return {
+    "text": text
+  }
+}
