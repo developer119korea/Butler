@@ -3,13 +3,18 @@ const unirest = require("unirest");
 const gkeys = require("../butler-316109-cc49583efdf2.json");
 
 module.exports.postMessage = function (roomID, threadID, message) {
+  let postUrl;
+  if (threadID) {
+    postUrl = `https://chat.googleapis.com/v1/spaces/${roomID}/messages?thread_key=${threadID}`
+  } else {
+    postUrl = `https://chat.googleapis.com/v1/spaces/${roomID}/messages`;
+  }
+
   return new Promise(function (resolve, reject) {
     getJWT()
       .then(function (token) {
         unirest
-          .post(
-            `https://chat.googleapis.com/v1/spaces/${roomID}/messages?thread_key=${threadID}`
-          )
+          .post(postUrl)
           .headers({
             "Content-Type": "application/json",
             Authorization: "Bearer " + token,
