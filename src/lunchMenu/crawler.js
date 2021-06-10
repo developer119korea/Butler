@@ -1,4 +1,4 @@
-const config = require('../config');
+const config = require("../../config");
 const chrome_driver = require('chromedriver');
 const webdriver = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
@@ -10,7 +10,7 @@ const sleep = (waitTimeInMs) => new Promise(resolve => setTimeout(resolve, waitT
 const kAwaitMilliSecondWebPageLoading = 3000;
 
 
-module.exports.fetchTodayLaunchMenu = async () => {
+module.exports.fetchTodayLunchMenu = async () => {
   const service = new chrome.ServiceBuilder(chrome_driver.path).build();
   chrome.setDefaultService(service);
   const driver = await new webdriver.Builder().forBrowser('chrome').build();
@@ -22,8 +22,7 @@ module.exports.fetchTodayLaunchMenu = async () => {
 
   await sleep(kAwaitMilliSecondWebPageLoading);
 
-  const menuContent = await iganepork.fetchTodayLaunchMenu(driver);
-  console.log('pageUrl : ', menuContent.pageUrl, '\n', 'imageUrl :', menuContent.imageUrl);
+  const menuContent = await iganepork.fetchTodayLunchMenu(driver);
 
   await driver.close();
   await driver.quit();

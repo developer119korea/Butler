@@ -11,7 +11,7 @@ const kSelectorImage = "body > div._2dDPU.CkGkG > div.zZYga > div > article > di
 
 const sleep = (waitTimeInMs) => new Promise(resolve => setTimeout(resolve, waitTimeInMs));
 
-module.exports.fetchTodayLaunchMenu = async (driver) => {
+module.exports.fetchTodayLunchMenu = async (driver) => {
   await driver.get('https://www.instagram.com/iganepork/');
   await sleep(kAwaitMilliSecondWebPageLoading);
 
@@ -34,12 +34,12 @@ module.exports.fetchTodayLaunchMenu = async (driver) => {
       return null;
 
     // 점심메뉴 게시물인지 확인
-    const isLaunchMenuArticle = await isItLaunchMenuArticle(driver);
+    const isLunchMenuArticle = await isItLunchMenuArticle(driver);
     var isClickedNextArticle = false;
 
     // 점심메뉴 게시글이라면 메뉴 사진 Url추출
-    if (isLaunchMenuArticle) {
-      const imageUrl = await getLaunchMenuImageUrl(driver);
+    if (isLunchMenuArticle) {
+      const imageUrl = await getLunchMenuImageUrl(driver);
       const pageUrl = await driver.getCurrentUrl();
       const menuContent = {
         pageUrl: pageUrl,
@@ -66,14 +66,14 @@ function isItToday(originDate, targetDate) {
     && originDate.getDate() == targetDate.getDate();
 }
 
-async function isItLaunchMenuArticle(driver) {
+async function isItLunchMenuArticle(driver) {
   try {
     const elementNextImageButton = await driver.findElement(By.className(kClassNameNextImageButton));
     return elementNextImageButton != null;
   }
   catch (error) {
     const currentUrl = await driver.getCurrentUrl();
-    console.log("not Launch Menu Article\n", currentUrl);
+    console.log("not Lunch Menu Article\n", currentUrl);
     return false;
   }
 }
@@ -91,7 +91,7 @@ async function clickNextArticleButton(driver) {
   }
 }
 
-async function getLaunchMenuImageUrl(driver) {
+async function getLunchMenuImageUrl(driver) {
   try {
     const image = await driver.findElement(By.css(kSelectorImage));
     const url = await image.getAttribute("src");

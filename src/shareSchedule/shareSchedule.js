@@ -1,7 +1,7 @@
-const config = require("../config");
-const googlechat = require("./googlechat");
-const message = require("./message");
-const chatMessage = require("../res/chatDescription.json");
+const config = require("../../config");
+const googlechat = require("../googlechat");
+const message = require("../message");
+const chatMessage = require("../../res/chatDescription.json");
 
 module.exports.NotifyNewWeekThread = function () {
   const periodText = getNextWeekPeriodText();
