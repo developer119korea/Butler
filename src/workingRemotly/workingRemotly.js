@@ -1,13 +1,14 @@
 const config = require("../../config");
+const chatMessage = require("../../res/chatDescription.json");
 const googlechat = require("../googlechat");
 const message = require("../message");
-const chatMessage = require("../../res/chatDescription.json");
 const nextWeekPeriodText = require("../nextWeekPeriodText");
 
 module.exports.NotifyNewWeekThread = function () {
   const periodText = nextWeekPeriodText.get();
-  const description = chatMessage.shareSchedule.replace('{periodText}', periodText);
-  const roomID = config.google_chat_share_schedule_room_id;
+  let description = chatMessage.workingRemotly.replace('{periodText}', periodText);
+  description += `\n${config.google_chat_working_remotly_meet_id}`;
+  const roomID = config.google_chat_working_remotly_room_id;
   const textMessage = message.text(description);
   googlechat.postMessage(roomID, null, textMessage);
 }
