@@ -27,16 +27,23 @@ config.js는 아래와 같은 구성을 가지고 있어야합니다
 {
   "instagram_id": "your@email.com",
   "instagram_pw": "your password",
-  "google_chat_general_room_id": "AAAAo2xiUnA",
-  "google_chat_analytics_room_id": "AAAA5KKO5rs",
-  "google_chat_lunch_thread_id": "launchMenuNotification",
+  "google_chat_general_room_id": "xxxxxxxxx",
+  "google_chat_analytics_room_id": "xxxxxxxx",
+  "google_chat_share_schedule_room_id": "xxxxxxxx",
+  "google_chat_working_remotly_room_id": "xxxxxxxxx",
+  "google_chat_lunch_thread_id": "lunchMenuNotification",
   "google_chat_lunch_menu_icon": "https://w7.pngwing.com/pngs/462/874/png-transparent-instagram-logo-icon-instagram-icon-text-logo-sticker-thumbnail.png",
+  "google_chat_working_remotly_meet_id": "https://meet.google.com/eqr-cfpq-rms",
   "google_chat_lunch_menu_noti_hour": 11,
   "google_chat_lunch_menu_noti_minute": 30,
-  "google_chat_share_schedule_noti_dayofweek": 4,
-  "google_chat_share_schedule_noti_hour": 10,
-  "google_chat_share_schedule_noti_minute": 57
+  "google_chat_share_schedule_noti_dayofweek": 5,
+  "google_chat_share_schedule_noti_hour": 11,
+  "google_chat_share_schedule_noti_minute": 0,
+  "google_chat_working_remotly_noti_dayofweek": 5,
+  "google_chat_working_remotly_noti_hour": 11,
+  "google_chat_working_remotly_noti_minute": 0
 }
+
 ```
 
 ```sh
