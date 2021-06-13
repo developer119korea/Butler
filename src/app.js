@@ -5,7 +5,7 @@ const shareSchedule = require("./shareSchedule/shareSchedule");
 const workingRemotly = require("./workingRemotly/workingRemotly");
 
 const lunchMenuRule = new schedule.RecurrenceRule();
-lunchMenuRule.dayOfWeek = [0, new schedule.Range(1, 5)];
+lunchMenuRule.dayOfWeek = new schedule.Range(1, 5);
 lunchMenuRule.hour = config.google_chat_lunch_menu_noti_hour;
 lunchMenuRule.minute = config.google_chat_lunch_menu_noti_minute;
 lunchMenuRule.tz = "Asia/Seoul";
