@@ -33,7 +33,7 @@ config.js는 아래와 같은 구성을 가지고 있어야합니다
   "google_chat_working_remotly_room_id": "xxxxxxxxx",
   "google_chat_lunch_thread_id": "lunchMenuNotification",
   "google_chat_lunch_menu_icon": "https://w7.pngwing.com/pngs/462/874/png-transparent-instagram-logo-icon-instagram-icon-text-logo-sticker-thumbnail.png",
-  "google_chat_working_remotly_meet_id": "https://meet.google.com/eqr-cfpq-rms",
+  "google_chat_working_remotly_meet_id": "google meet url",
   "google_chat_lunch_menu_noti_hour": 11,
   "google_chat_lunch_menu_noti_minute": 30,
   "google_chat_share_schedule_noti_dayofweek": 5,
