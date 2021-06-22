@@ -1,8 +1,8 @@
 const schedule = require("node-schedule");
 const config = require("../config");
-const lunchMenu = require("./lunchMenu/lunchMenu");
-const shareSchedule = require("./shareSchedule/shareSchedule");
-const workingRemotly = require("./workingRemotly/workingRemotly");
+const lunchMenu = require("./lunchMenu");
+const shareSchedule = require("./shareSchedule");
+const workingRemotly = require("./workingRemotly");
 
 const lunchMenuRule = new schedule.RecurrenceRule();
 lunchMenuRule.dayOfWeek = new schedule.Range(1, 5);
