@@ -8,7 +8,7 @@ module.exports.Notify = async function () {
 
   if (menuContent) {
     const roomID = config.google_chat_general_room_id;
-    const threadID = config.google_chat_lunch_thread_id;
+    const threadID = null;
     const iconUrl = config.google_chat_lunch_menu_icon;
     const pageUrl = menuContent.pageUrl;
     const imageUrl = menuContent.imageUrl;
@@ -16,7 +16,7 @@ module.exports.Notify = async function () {
     googlechat.postMessage(roomID, threadID, cardMessage);
   } else {
     const roomID = config.google_chat_analytics_room_id;
-    const threadID = config.google_chat_lunch_thread_id;
+    const threadID = null;
     const textMessage = message.text("Failed FetchTodayLunchMenu")
     googlechat.postMessage(roomID, threadID, textMessage);
   }
