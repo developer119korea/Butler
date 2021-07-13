@@ -22,19 +22,19 @@
   - node-schedule@2.0.0
   
 ## How to Run?
-프로젝트 루트 경로에 config.js 파일이 있어야합니다
+프로젝트 루트 경로에서 JsonFiles/config.js 파일이 있어야합니다
 config.js는 아래와 같은 구성을 가지고 있어야합니다
-```js
+```json
 {
-  "instagram_id": "your@email.com",
-  "instagram_pw": "your password",
-  "google_chat_general_room_id": "xxxxxxxxx",
-  "google_chat_analytics_room_id": "xxxxxxxx",
-  "google_chat_share_schedule_room_id": "xxxxxxxx",
-  "google_chat_working_remotly_room_id": "xxxxxxxxx",
-  "google_chat_lunch_thread_id": "lunchMenuNotification",
-  "google_chat_lunch_menu_icon": "https://w7.pngwing.com/pngs/462/874/png-transparent-instagram-logo-icon-instagram-icon-text-logo-sticker-thumbnail.png",
-  "google_chat_working_remotly_meet_id": "google meet url",
+  "instagram_id": "",
+  "instagram_pw": "",
+  "google_chat_general_room_id": "",
+  "google_chat_analytics_room_id": "",
+  "google_chat_share_schedule_room_id": "",
+  "google_chat_working_remotly_room_id": "",
+  "google_chat_app_review_room_id": "",
+  "google_chat_lunch_menu_icon": "",
+  "google_chat_working_remotly_meet_id": "",
   "google_chat_lunch_menu_noti_hour": 11,
   "google_chat_lunch_menu_noti_minute": 30,
   "google_chat_share_schedule_noti_dayofweek": 5,
@@ -42,7 +42,14 @@ config.js는 아래와 같은 구성을 가지고 있어야합니다
   "google_chat_share_schedule_noti_minute": 0,
   "google_chat_working_remotly_noti_dayofweek": 5,
   "google_chat_working_remotly_noti_hour": 11,
-  "google_chat_working_remotly_noti_minute": 0
+  "google_chat_working_remotly_noti_minute": 0,
+  "google_app_package_name": "",
+  "google_app_store_link": "",
+  "google_review_manager_link": "",
+  "img_url_star_on": "",
+  "img_url_star_off": "",
+  "img_url_google_play_icon": "",
+  "img_url_google_play_console_icon": ""
 }
 
 ```

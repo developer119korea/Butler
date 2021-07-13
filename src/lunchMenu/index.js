@@ -1,4 +1,4 @@
-const config = require("../../config");
+const config = require("../../jsonFiles/config.json");
 const crawler = require("./crawler");
 const googlechat = require("../googlechat");
 const message = require("../message");

@@ -1,9 +1,9 @@
 const schedule = require("node-schedule");
-const config = require("../config");
 const lunchMenu = require("./lunchMenu");
 const shareSchedule = require("./shareSchedule");
 const workingRemotly = require("./workingRemotly");
 const googleReview = require("./googleReview");
+const config = require("../jsonFiles/config.json");
 
 schedule.scheduleJob('0 0/5 * * * *', googleReview.pull);
 

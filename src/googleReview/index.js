@@ -1,9 +1,8 @@
-const config = require("../../config");
+const config = require("../../jsonFiles/config.json");
 const reviews = require("./googleReview");
 const noticeHistory = require("./noticeHistory");
 const googleChat = require("../googlechat");
 const message = require('../message');
-
 const appPackageName = config.google_app_package_name;
 
 module.exports.pull = async () => {
@@ -38,7 +37,6 @@ function filterNewReview(reviews, history) {
     if (history.ids.find(ids => ids === review.reviewId)) {
       continue;
     }
-    console.log(`new review : ${review.reviewId}`);
     filteredReviews.push(review);
   }
   return filteredReviews;

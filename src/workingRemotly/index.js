@@ -1,5 +1,5 @@
-const config = require("../../config");
-const chatMessage = require("../../res/chatDescription.json");
+const config = require("../../jsonFiles/config.json");
+const chatMessage = require("../../jsonFiles/chatDescription.json");
 const googlechat = require("../googlechat");
 const message = require("../message");
 const nextWeekPeriodText = require("../nextWeekPeriodText");

@@ -1,10 +1,9 @@
 const fs = require('fs');
 const appRoot = require('app-root-path');
-const filePath = `${appRoot}/res/reviewNotifyHistory.json`;
+const filePath = `${appRoot}/jsonFiles/reviewNotifyHistory.json`;
 
 exports.save = function (history, reviews) {
   for (const review of reviews) {
-    console.log("push : ", review.reviewId);
     history.ids.push(review.reviewId);
   }
   fs.writeFileSync(filePath, JSON.stringify(history));

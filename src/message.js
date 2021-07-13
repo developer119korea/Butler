@@ -1,6 +1,6 @@
 const dateUtil = require("./dateUtil");
 const language = require("./language");
-const config = require("./../config.json");
+const config = require("./../jsonFiles/config.json");
 
 module.exports.card = function (pageUrl, imageUrl, iconUrl) {
   return {

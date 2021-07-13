@@ -1,4 +1,4 @@
-const config = require("../../config");
+const config = require("../../jsonFiles/config.json");
 const chrome_driver = require('chromedriver');
 const webdriver = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
