@@ -8,6 +8,7 @@
 - 사내 근처의 한식뷔페인 이가네흑돼지의 오늘의 메뉴를 알려줍니다
 - 구글 챗 일정공유 방에 매주 새로운 대화 스레드를 열어줍니다
 - 구글 챗 원격근무 방에 매주 새로운 대화 스레드를 열어줍니다
+- 서비스 중인 앱의 구글 스토어에 새로운 리뷰가 달리면 알려줍니다
 
 ## Environment
 - [google cloud platform](https://console.cloud.google.com/apis/api/chat.googleapis.com/overview?hl=ko&orgonly=true&project=butler-316109&supportedpurview=organizationId)의 서비스 계정을 사용합니다

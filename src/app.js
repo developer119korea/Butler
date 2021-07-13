@@ -3,6 +3,9 @@ const config = require("../config");
 const lunchMenu = require("./lunchMenu");
 const shareSchedule = require("./shareSchedule");
 const workingRemotly = require("./workingRemotly");
+const googleReview = require("./googleReview");
+
+schedule.scheduleJob('0 0/5 * * * *', googleReview.pull);
 
 const lunchMenuRule = new schedule.RecurrenceRule();
 lunchMenuRule.dayOfWeek = new schedule.Range(1, 5);

@@ -1,0 +1,154 @@
+{
+  "reviews": [
+    {
+      "reviewId": "gp:AOqpTOGqqPtmXMN6M3UyC46fhJEe_h5aL8t4QWfNgrTlLp321yDObH9xo-oMIdAHOptT7VuGUR2nxxenG1jQiA",
+      "authorName": "쿠쿠&빵떡",
+      "comments": [
+        {
+          "userComment": {
+            "text": "\t굿!이거 덕분에!제가 이를 제대로 안닦는데 이를 깨끗하게 닦게 되었어요!",
+            "lastModified": { "seconds": "1625666729", "nanos": 739000000 },
+            "starRating": 5,
+            "reviewerLanguage": "ko",
+            "device": "bloomq",
+            "androidOsVersion": 30,
+            "appVersionCode": 241,
+            "appVersionName": "3.1.10",
+            "deviceMetadata": {
+              "productName": "bloomq (Galaxy Z Flip)",
+              "manufacturer": "Samsung",
+              "deviceClass": "FORM_FACTOR_PHONE",
+              "nativePlatform": "ABI_ARM64_V8,ABI_ARM_V7,ABI_ARM",
+              "cpuModel": "SM8150P",
+              "cpuMake": "Qualcomm"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "reviewId": "gp:AOqpTOFPBTYSIxiEQKCEv09dZD2E6DVotYFM5NqvMJkwMpYMK9DSzw7VmlHSzbXyO2ASHraFCy-uDUOlaptzkQ",
+      "authorName": "Yulya :-)",
+      "comments": [
+        {
+          "userComment": {
+            "text": "\t마지막 업데이트 후 응용 프로그램 작동이 중지되고 연결을 찾을 수 없으며 오류가 발생하고 닫힙니다.",
+            "lastModified": { "seconds": "1625629770", "nanos": 569000000 },
+            "starRating": 4,
+            "reviewerLanguage": "ru",
+            "device": "HWLLD-H",
+            "androidOsVersion": 28,
+            "appVersionCode": 235,
+            "appVersionName": "3.1.8",
+            "deviceMetadata": {
+              "productName": "HWLLD-H (荣耀9青春版)",
+              "manufacturer": "Huawei",
+              "deviceClass": "FORM_FACTOR_PHONE",
+              "nativePlatform": "ABI_ARM64_V8,ABI_ARM_V7,ABI_ARM",
+              "cpuModel": "KIRIN659",
+              "cpuMake": "HiSilicon"
+            },
+            "originalText": "\tПосле последнего обновления перестало приложение работать, связь не найдена, ошибка и закрывается"
+          }
+        },
+        {
+          "developerComment": {
+            "text": "Здравствуйте! Прежде всего, приносим свои извинения за неудобства. Версия 3.1.10 была обновлена ​​для исправления упомянутых вами ошибок. Найдите [Brush Monster] в магазине Google Play, нажмите кнопку [Обновить] и запустите приложение. Спасибо.",
+            "lastModified": { "seconds": "1625721533", "nanos": 875000000 }
+          }
+        }
+      ]
+    },
+    {
+      "reviewId": "gp:AOqpTOHDuftsTNSPLxJa0dZJIJDV2RKqXx7akqzK48gJl83pmuMqVpIPJE0tcsz1auv0fdNDYzO0ekvIupkzow",
+      "authorName": "한진희",
+      "comments": [
+        {
+          "userComment": {
+            "text": "\t왜 안들어가지죠..ㅠ",
+            "lastModified": { "seconds": "1625615816", "nanos": 877000000 },
+            "starRating": 1,
+            "reviewerLanguage": "ko",
+            "device": "beyond1",
+            "androidOsVersion": 30,
+            "appVersionCode": 235,
+            "appVersionName": "3.1.8",
+            "deviceMetadata": {
+              "productName": "beyond1 (Galaxy S10)",
+              "manufacturer": "Samsung",
+              "deviceClass": "FORM_FACTOR_PHONE",
+              "nativePlatform": "ABI_ARM64_V8,ABI_ARM_V7,ABI_ARM",
+              "cpuModel": "Exynos 9820",
+              "cpuMake": "Samsung"
+            }
+          }
+        },
+        {
+          "developerComment": {
+            "text": "고객님 안녕하세요, 우선 이용에 불편을 드려 정말 죄송합니다. 말씀해주신 오류를 수정한 3.1.10 버전이 업데이트 되었어요. 구글플레이스토어에서 [브러쉬몬스터] 검색 후 [업데이트] 버튼을 눌러주시고요, 앱을 실행해주시면 됩니다. 추가 문의사항은 브러쉬몬스터 카카오채널 bit.ly/kakaobmon로 연락주시면 빠른 답변 가능합니다. 감사합니다.\n",
+            "lastModified": { "seconds": "1625703878", "nanos": 415000000 }
+          }
+        }
+      ]
+    },
+    {
+      "reviewId": "gp:AOqpTOFQ0MWa1rd-1lu1SVXzCUV-MsFuUfoCv7WdgEQ4Rw-sJDEpPFiOivoDiFl9CgXDrKH7ehs3AGSWPIH02g",
+      "authorName": "Haneyeh Fardmanesh",
+      "comments": [
+        {
+          "userComment": {
+            "text": "\t작동하지 않습니다!",
+            "lastModified": { "seconds": "1625606027", "nanos": 53000000 },
+            "starRating": 1,
+            "reviewerLanguage": "en",
+            "device": "jackpotlte",
+            "androidOsVersion": 28,
+            "appVersionCode": 235,
+            "appVersionName": "3.1.8",
+            "deviceMetadata": {
+              "productName": "jackpotlte (Galaxy A8(2018))",
+              "manufacturer": "Samsung",
+              "deviceClass": "FORM_FACTOR_PHONE",
+              "nativePlatform": "ABI_ARM64_V8,ABI_ARM_V7,ABI_ARM",
+              "cpuModel": "Exynos 7885",
+              "cpuMake": "Samsung"
+            },
+            "originalText": "\tIts not work !"
+          }
+        }
+      ]
+    },
+    {
+      "reviewId": "gp:AOqpTOHmgArz1v22xjXlmUvuyjkC6gqV9Dm2aLvav347vQSIVNnlq3HWHUgGznuVZ06bDCNj3TBmGSmxQL06Rg",
+      "authorName": "BlueFish",
+      "comments": [
+        {
+          "userComment": {
+            "text": "\t석달?정도 안하다가 애가 울고불어서 부랴부랴 칫솔리필 구매해서 했더니 네트워크오류라고 안되네요ㅠㅠ 언제쯤 정상화되나요ㅠ",
+            "lastModified": { "seconds": "1625476756", "nanos": 639000000 },
+            "starRating": 5,
+            "reviewerLanguage": "ko",
+            "device": "o1s",
+            "androidOsVersion": 30,
+            "appVersionCode": 235,
+            "appVersionName": "3.1.8",
+            "deviceMetadata": {
+              "productName": "o1s (Galaxy S21 5G)",
+              "manufacturer": "Samsung",
+              "deviceClass": "FORM_FACTOR_PHONE",
+              "nativePlatform": "ABI_ARM64_V8,ABI_ARM_V7,ABI_ARM",
+              "cpuModel": "Exynos 2100",
+              "cpuMake": "Samsung"
+            }
+          }
+        },
+        {
+          "developerComment": {
+            "text": "고객님 안녕하세요, 우선 이용에 불편을 드려 정말 죄송합니다. 말씀해주신 오류를 수정한 3.1.10 버전이 업데이트 되었어요. 구글플레이스토어에서 [브러쉬몬스터] 검색 후 [업데이트] 버튼을 눌러주시고요, 앱을 실행해주시면 됩니다. 추가 문의사항은 브러쉬몬스터 카카오채널 bit.ly/kakaobmon로 연락주시면 빠른 답변 가능합니다. 감사합니다.",
+            "lastModified": { "seconds": "1625703912", "nanos": 31000000 }
+          }
+        }
+      ]
+    }
+  ]
+}
