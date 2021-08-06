@@ -3,6 +3,7 @@ const lunchMenu = require("./lunchMenu");
 const shareSchedule = require("./shareSchedule");
 const workingRemotly = require("./workingRemotly");
 const okrReminder = require("./okrReminder");
+const scrumMeetReminder = require("./scrumMeetReminder");
 const googleReview = require("./googleReview");
 const config = require("../jsonFiles/config.json");
 
@@ -35,3 +36,10 @@ okrReminderRule.hour = config.google_chat_okr_reminder_noti_hour;
 okrReminderRule.minute = config.google_chat_okr_reminder_noti_minute;
 okrReminderRule.tz = "Asia/Seoul";
 schedule.scheduleJob(okrReminderRule, okrReminder.Notify);
+
+const scrumMeetReminderRule = new schedule.RecurrenceRule();
+scrumMeetReminderRule.dayOfWeek = new schedule.Range(1, 5);
+scrumMeetReminderRule.hour = config.google_chat_scrum_meet_reminder_noti_hour;
+scrumMeetReminderRule.minute = config.google_chat_scrum_meet_reminder_noti_minute;
+scrumMeetReminderRule.tz = "Asia/Seoul";
+schedule.scheduleJob(scrumMeetReminderRule, scrumMeetReminder.Notify);
