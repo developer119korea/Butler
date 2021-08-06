@@ -2,6 +2,7 @@ const schedule = require("node-schedule");
 const lunchMenu = require("./lunchMenu");
 const shareSchedule = require("./shareSchedule");
 const workingRemotly = require("./workingRemotly");
+const okrReminder = require("./okrReminder");
 const googleReview = require("./googleReview");
 const config = require("../jsonFiles/config.json");
 
@@ -27,3 +28,10 @@ workingRemotlyRule.hour = config.google_chat_working_remotly_noti_hour;
 workingRemotlyRule.minute = config.google_chat_working_remotly_noti_minute;
 workingRemotlyRule.tz = "Asia/Seoul";
 schedule.scheduleJob(workingRemotlyRule, workingRemotly.NotifyNewWeekThread);
+
+const okrReminderRule = new schedule.RecurrenceRule();
+okrReminderRule.dayOfWeek = config.google_chat_okr_reminder_noti_dayofweek;
+okrReminderRule.hour = config.google_chat_okr_reminder_noti_hour;
+okrReminderRule.minute = config.google_chat_okr_reminder_noti_minute;
+okrReminderRule.tz = "Asia/Seoul";
+schedule.scheduleJob(okrReminderRule, okrReminder.Notify);
