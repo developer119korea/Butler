@@ -1,7 +1,7 @@
 const { google } = require("googleapis");
 const unirest = require("unirest");
 const gkeys = require("../../jsonFiles/api-5253024070763610502-353789-581ddfce0378.json");
-const fakeReviews = require("../../jsonFiles/fakeReview.json");
+const fakeReviews = require("./fakeReview.json");
 
 module.exports.getFakeReviews = function () {
   return JSON.stringify(fakeReviews, 'utf8');

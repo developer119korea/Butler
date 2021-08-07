@@ -119,3 +119,5 @@ dist
 
 # Json files
 jsonFiles
+config.json
+fakeReview.json

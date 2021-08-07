@@ -5,9 +5,9 @@ const workingRemotly = require("./workingRemotly");
 const okrReminder = require("./okrReminder");
 const scrumMeetReminder = require("./scrumMeetReminder");
 
-googleReview.start();
-lunchMenu.start();
-shareSchedule.start();
-workingRemotly.start();
-okrReminder.start();
-scrumMeetReminder.start();
+workingRemotly.test();
+shareSchedule.test();
+scrumMeetReminder.test();
+okrReminder.test();
+googleReview.test();
+lunchMenu.test();

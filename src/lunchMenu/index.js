@@ -1,23 +1,37 @@
-const config = require("../../jsonFiles/config.json");
+const schedule = require("node-schedule");
+const config = require("./config.json");
 const crawler = require("./crawler");
 const googlechat = require("../googlechat");
 const message = require("../message");
 
-module.exports.Notify = async function () {
+exports.test = () => {
+  const roomID = config.analytics_room_id;
+  notify(roomID);
+}
+
+exports.start = () => {
+  const lunchMenuRule = new schedule.RecurrenceRule();
+  lunchMenuRule.dayOfWeek = new schedule.Range(1, 5);
+  lunchMenuRule.hour = config.noti_hour;
+  lunchMenuRule.minute = config.noti_minute;
+  lunchMenuRule.tz = "Asia/Seoul";
+  schedule.scheduleJob(lunchMenuRule, () => notify(roomID));
+}
+
+async function notify(roomID) {
   const menuContent = await crawler.fetchTodayLunchMenu();
 
   if (menuContent) {
-    const roomID = config.google_chat_general_room_id;
     const threadID = null;
-    const iconUrl = config.google_chat_lunch_menu_icon;
+    const iconUrl = config.lunch_menu_icon;
     const pageUrl = menuContent.pageUrl;
     const imageUrl = menuContent.imageUrl;
     const cardMessage = message.card(pageUrl, imageUrl, iconUrl);
     googlechat.postMessage(roomID, threadID, cardMessage);
   } else {
-    const roomID = config.google_chat_analytics_room_id;
+    const analyticsRoomID = config.analytics_room_id;
     const threadID = null;
     const textMessage = message.text("Failed FetchTodayLunchMenu")
-    googlechat.postMessage(roomID, threadID, textMessage);
+    googlechat.postMessage(analyticsRoomID, threadID, textMessage);
   }
 }

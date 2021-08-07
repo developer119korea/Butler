@@ -1,16 +1,27 @@
-const config = require("../../jsonFiles/config.json");
+const schedule = require("node-schedule");
+const config = require("./config.json");
 const reviews = require("./googleReview");
 const noticeHistory = require("./noticeHistory");
 const googleChat = require("../googlechat");
 const message = require('../message');
-const appPackageName = config.google_app_package_name;
 
-module.exports.pull = async () => {
+exports.test = () => {
+  const roomID = config.analytics_room_id;
+  pull(roomID);
+}
+
+exports.start = () => {
+  const roomID = config.room_id;
+  schedule.scheduleJob('0 0/5 * * * *', () => pull(roomID));
+}
+
+async function pull(roomID) {
   var isFake = false;
   var reviewsJsonString;
   if (isFake) {
     reviewsJsonString = reviews.getFakeReviews();
   } else {
+    const appPackageName = config.google_app_package_name;
     const reviewsJson = await reviews.getReviews(appPackageName);
     reviewsJsonString = JSON.stringify(reviewsJson);
     console.log(reviewsJsonString);
@@ -19,13 +30,12 @@ module.exports.pull = async () => {
   const reviewsJson = JSON.parse(reviewsJsonString);
   const history = noticeHistory.load();
   const newReviews = filterNewReview(reviewsJson.reviews, history);
-  notify(newReviews);
+  notify(newReviews, roomID);
   noticeHistory.save(history, newReviews);
 }
 
-function notify(reviews) {
+function notify(reviews, roomID) {
   for (const review of reviews) {
-    const roomID = config.google_chat_app_review_room_id;
     const reviewMessage = message.review(review);
     googleChat.postMessage(roomID, null, reviewMessage);
   }
