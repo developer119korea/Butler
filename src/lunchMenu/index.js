@@ -15,6 +15,7 @@ exports.start = () => {
   lunchMenuRule.hour = config.noti_hour;
   lunchMenuRule.minute = config.noti_minute;
   lunchMenuRule.tz = "Asia/Seoul";
+  const roomID = config.room_id;
   schedule.scheduleJob(lunchMenuRule, () => notify(roomID));
 }
 
