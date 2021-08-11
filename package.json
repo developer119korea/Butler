@@ -15,7 +15,9 @@
   "main": "/src/app.js",
   "scripts": {
     "test": "node src/test-app.js",
-    "start": "node src/app.js"
+    "start": "node src/app.js",
+    "test-scrum-meet-reminder": "node src/scrumMeetReminder/test.js",
+    "test-okr-reminder": "node src/okrReminder/test.js"
   },
   "repository": {
     "type": "git",

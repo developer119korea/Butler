@@ -2,11 +2,7 @@ const schedule = require("node-schedule");
 const config = require("./config.json");
 const googlechat = require("../googlechat");
 const message = require("../message");
-
-exports.test = () => {
-  const roomID = config.analytics_room_id;
-  notify(roomID);
-}
+const holiday = require("../holiday");
 
 exports.start = () => {
   const okrReminderRule = new schedule.RecurrenceRule();
@@ -15,10 +11,15 @@ exports.start = () => {
   okrReminderRule.minute = config.noti_minute;
   okrReminderRule.tz = "Asia/Seoul";
   const roomID = config.room_id;
-  schedule.scheduleJob(okrReminderRule, () => notify(roomID));
+  schedule.scheduleJob(okrReminderRule, async () => {
+    const isHoliday = await holiday.itIsHolidayToday();
+    if (!isHoliday) {
+      exports.notify(roomID)
+    }
+  });
 }
 
-function notify(roomID) {
+exports.notify = (roomID) => {
   let description = config.description;
   const textMessage = message.text(description);
   googlechat.postMessage(roomID, null, textMessage);

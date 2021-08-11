@@ -2,11 +2,7 @@ const schedule = require("node-schedule");
 const config = require("./config.json");
 const googlechat = require("../googlechat");
 const message = require("../message");
-
-exports.test = () => {
-  const roomID = config.analytics_room_id;
-  notify(roomID);
-}
+const holiday = require("../holiday");
 
 exports.start = () => {
   const scrumMeetReminderRule = new schedule.RecurrenceRule();
@@ -15,10 +11,15 @@ exports.start = () => {
   scrumMeetReminderRule.minute = config.noti_minute;
   scrumMeetReminderRule.tz = "Asia/Seoul";
   const roomID = config.room_id;
-  schedule.scheduleJob(scrumMeetReminderRule, () => notify(roomID));
+  schedule.scheduleJob(scrumMeetReminderRule, async () => {
+    const isHoliday = await holiday.itIsHolidayToday();
+    if (!isHoliday) {
+      exports.notify(roomID)
+    }
+  });
 }
 
-function notify(roomID) {
+exports.notify = (roomID) => {
   let description = config.description;
   const textMessage = message.text(description);
   googlechat.postMessage(roomID, null, textMessage);
