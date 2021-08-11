@@ -6,6 +6,10 @@ exports.secondsToDateString = function (seconds) {
   return lastModifiedDateString;
 }
 
+exports.holidayLabel = function (date) {
+  return dateFormat(date, `yyyymmdd`);
+}
+
 function convertToKoreanDate(seconds) {
   let date = new Date(1970, 0, 1);
   date.setSeconds(seconds);
