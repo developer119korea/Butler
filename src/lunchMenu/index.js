@@ -9,6 +9,11 @@ exports.test = () => {
   notify(roomID);
 }
 
+exports.directShot = () => {
+  const roomID = config.room_id;
+  notify(roomID);
+}
+
 exports.start = () => {
   const lunchMenuRule = new schedule.RecurrenceRule();
   lunchMenuRule.dayOfWeek = new schedule.Range(1, 5);
@@ -19,7 +24,7 @@ exports.start = () => {
   schedule.scheduleJob(lunchMenuRule, () => notify(roomID));
 }
 
-async function notify(roomID) {
+notify = async (roomID) => {
   const menuContent = await crawler.fetchTodayLunchMenu();
 
   if (menuContent) {

@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "app-root-path": "^3.0.0",
-    "chromedriver": "^92.0.0",
+    "chromedriver": "^93.0.1",
     "dateformat": "^4.5.1",
     "googleapis": "^75.0.0",
     "node-schedule": "^2.0.0",
@@ -17,7 +17,9 @@
     "test": "node src/test-app.js",
     "start": "node src/app.js",
     "test-scrum-meet-reminder": "node src/scrumMeetReminder/test.js",
-    "test-okr-reminder": "node src/okrReminder/test.js"
+    "test-okr-reminder": "node src/okrReminder/test.js",
+    "test-lunch-menu": "node src/lunchMenu/test.js",
+    "directshot-lunch-menu": "node src/lunchMenu/directShot.js"
   },
   "repository": {
     "type": "git",
