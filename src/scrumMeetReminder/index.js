@@ -10,11 +10,13 @@ exports.start = () => {
   scrumMeetReminderRule.hour = config.noti_hour;
   scrumMeetReminderRule.minute = config.noti_minute;
   scrumMeetReminderRule.tz = "Asia/Seoul";
-  const roomID = config.room_id;
+  const pxRoomID = config.px_room_id;
+  const devRoomID = config.dev_room_id;
   schedule.scheduleJob(scrumMeetReminderRule, async () => {
     const isHoliday = await holiday.itIsHolidayToday();
     if (!isHoliday) {
-      exports.notify(roomID)
+      exports.notify(pxRoomID);
+      exports.notify(devRoomID);
     }
   });
 }
