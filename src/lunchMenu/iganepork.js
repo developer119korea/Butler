@@ -4,10 +4,10 @@ const By = webdriver.By;
 const kAwaitMilliSecondWebPageLoading = 3000;
 
 const kSelectorFirstArticleThumnail = "#react-root > section > main > div > div._2z6nI > article > div:nth-child(1) > div > div:nth-child(1) > div:nth-child(1) > a > div > div._9AhH0";
-const kSelectorArticlePublishedDate = "body > div._2dDPU.CkGkG > div.zZYga > div > article > div.eo2As > div.k_Q0X.I0_K8.NnvRN > a > time";
+const kSelectorArticlePublishedDate = "body > div._2dDPU.CkGkG > div.zZYga > div > article > div > div.Igw0E.IwRSH.eGOV_._4EzTm > div > div.eo2As > div.k_Q0X.I0_K8.NnvRN > a > time";
+const kSelectorImage = "body > div._2dDPU.CkGkG > div.zZYga > div > article > div > div._97aPb > div > div.pR7Pc > div.Igw0E.IwRSH.eGOV_._4EzTm.O1flK.D8xaz.fm1AK.TxciK.yiMZG > div > div > div > ul > li:nth-child(2) > div > div > div > div.KL4Bh > img";
 const kClassNameNextArticleButton = " _65Bje  coreSpriteRightPaginationArrow";
 const kClassNameNextImageButton = "coreSpriteRightChevron";
-const kSelectorImage = "body > div._2dDPU.CkGkG > div.zZYga > div > article > div._97aPb > div > div.pR7Pc > div.Igw0E.IwRSH.eGOV_._4EzTm.O1flK.D8xaz.fm1AK.TxciK.yiMZG > div > div > div > ul > li:nth-child(2) > div > div > div > div.KL4Bh > img";
 
 const sleep = (waitTimeInMs) => new Promise(resolve => setTimeout(resolve, waitTimeInMs));
 
