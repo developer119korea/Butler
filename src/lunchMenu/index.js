@@ -6,12 +6,12 @@ const message = require("../message");
 
 exports.test = () => {
   const roomID = config.analytics_room_id;
-  notify(roomID);
+  notifyUntilSeuccess(roomID);
 }
 
 exports.directShot = () => {
-  const roomID = config.room_id;
-  notify(roomID);
+  const roomID = config.analytics_room_id;
+  notifyUntilSeuccess(roomID);
 }
 
 exports.start = () => {
@@ -20,13 +20,23 @@ exports.start = () => {
   lunchMenuRule.hour = config.noti_hour;
   lunchMenuRule.minute = config.noti_minute;
   lunchMenuRule.tz = "Asia/Seoul";
-  const roomID = config.room_id;
-  schedule.scheduleJob(lunchMenuRule, () => notify(roomID));
+  const roomID = config.analytics_room_id;
+  schedule.scheduleJob(lunchMenuRule, () => notifyUntilSeuccess(roomID));
 }
 
-notify = async (roomID) => {
-  const menuContent = await crawler.fetchTodayLunchMenu();
+const waitForSeconds = (milliSecond) => new Promise((resolve) => setTimeout(resolve, milliSecond));
 
+const notifyUntilSeuccess = async (roomID) => {
+  let menuContent = await notify(roomID);
+
+  for (let retryCount = 0; !menuContent && retryCount < config.retry_count; retryCount++) {
+    await waitForSeconds(config.retry_millisecond_interval);
+    menuContent = await notify(roomID);
+  }
+}
+
+const notify = async (roomID) => {
+  const menuContent = await crawler.fetchTodayLunchMenu();
   if (menuContent) {
     const threadID = null;
     const iconUrl = config.lunch_menu_icon;
@@ -40,4 +50,5 @@ notify = async (roomID) => {
     const textMessage = message.text("Failed FetchTodayLunchMenu")
     googlechat.postMessage(analyticsRoomID, threadID, textMessage);
   }
+  return menuContent;
 }
