@@ -6,12 +6,12 @@ const message = require("../message");
 
 exports.test = () => {
   const roomID = config.analytics_room_id;
-  notifyUntilSeuccess(roomID);
+  notifyUntilSuccess(roomID);
 }
 
 exports.directShot = () => {
-  const roomID = config.analytics_room_id;
-  notifyUntilSeuccess(roomID);
+  const roomID = config.room_id;
+  notifyUntilSuccess(roomID);
 }
 
 exports.start = () => {
@@ -20,13 +20,13 @@ exports.start = () => {
   lunchMenuRule.hour = config.noti_hour;
   lunchMenuRule.minute = config.noti_minute;
   lunchMenuRule.tz = "Asia/Seoul";
-  const roomID = config.analytics_room_id;
-  schedule.scheduleJob(lunchMenuRule, () => notifyUntilSeuccess(roomID));
+  const roomID = config.room_id;
+  schedule.scheduleJob(lunchMenuRule, () => notifyUntilSuccess(roomID));
 }
 
 const waitForSeconds = (milliSecond) => new Promise((resolve) => setTimeout(resolve, milliSecond));
 
-const notifyUntilSeuccess = async (roomID) => {
+const notifyUntilSuccess = async (roomID) => {
   let menuContent = await notify(roomID);
 
   for (let retryCount = 0; !menuContent && retryCount < config.retry_count; retryCount++) {
