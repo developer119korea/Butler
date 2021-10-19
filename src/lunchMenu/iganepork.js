@@ -1,7 +1,8 @@
 const webdriver = require('selenium-webdriver');
-
 const By = webdriver.By;
-const kAwaitMilliSecondWebPageLoading = 3000;
+const until = webdriver.until;
+const config = require('./config.json');
+const kAwaitMilliSecondWebPageLoading = config.awaitMilliSecondWebPageLoading;
 
 const kSelectorFirstArticleThumnail = "#react-root > section > main > div > div._2z6nI > article > div:nth-child(1) > div > div:nth-child(1) > div:nth-child(1) > a > div > div._9AhH0";
 const kSelectorArticlePublishedDate = "body > div._2dDPU.CkGkG > div.zZYga > div > article > div > div.Igw0E.IwRSH.eGOV_._4EzTm > div > div.eo2As > div.k_Q0X.I0_K8.NnvRN > a > time";
@@ -13,7 +14,7 @@ const sleep = (waitTimeInMs) => new Promise(resolve => setTimeout(resolve, waitT
 
 module.exports.fetchTodayLunchMenu = async (driver) => {
   await driver.get('https://www.instagram.com/iganepork/');
-  await sleep(kAwaitMilliSecondWebPageLoading);
+  await driver.wait(until.elementLocated(By.css(kSelectorFirstArticleThumnail)), kAwaitMilliSecondWebPageLoading);
 
   // 첫번째 게시물 클릭
   const elementArticleThumnail = await driver.findElement(By.css(kSelectorFirstArticleThumnail));
@@ -55,6 +56,7 @@ module.exports.fetchTodayLunchMenu = async (driver) => {
 }
 
 async function getPublishedDate(driver) {
+  await driver.wait(until.elementLocated(By.css(kSelectorArticlePublishedDate)), kAwaitMilliSecondWebPageLoading);
   const elementPublishedDate = await driver.findElement(By.css(kSelectorArticlePublishedDate));
   const dateTimeISO = await elementPublishedDate.getAttribute("datetime");
   return new Date(dateTimeISO);
@@ -68,6 +70,7 @@ function isItToday(originDate, targetDate) {
 
 async function isItLunchMenuArticle(driver) {
   try {
+    await driver.wait(until.elementLocated(By.className(kClassNameNextImageButton)), kAwaitMilliSecondWebPageLoading);
     const elementNextImageButton = await driver.findElement(By.className(kClassNameNextImageButton));
     return elementNextImageButton != null;
   }
@@ -80,6 +83,7 @@ async function isItLunchMenuArticle(driver) {
 
 async function clickNextArticleButton(driver) {
   try {
+    await driver.wait(until.elementLocated(By.className(kClassNameNextArticleButton)), kAwaitMilliSecondWebPageLoading);
     const button = await driver.findElement(By.className(kClassNameNextArticleButton));
     button.click();
     return true;
@@ -93,6 +97,7 @@ async function clickNextArticleButton(driver) {
 
 async function getLunchMenuImageUrl(driver) {
   try {
+    await driver.wait(until.elementLocated(By.css(kSelectorImage)), kAwaitMilliSecondWebPageLoading);
     const image = await driver.findElement(By.css(kSelectorImage));
     const url = await image.getAttribute("src");
     return url;

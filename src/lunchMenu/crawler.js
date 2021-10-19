@@ -7,7 +7,7 @@ const instagram = require("./instagram");
 const iganepork = require("./iganepork");
 
 const sleep = (waitTimeInMs) => new Promise(resolve => setTimeout(resolve, waitTimeInMs));
-const kAwaitMilliSecondWebPageLoading = 3000;
+const kAwaitMilliSecondWebPageLoading = config.awaitMilliSecondWebPageLoading;
 
 
 module.exports.fetchTodayLunchMenu = async () => {
