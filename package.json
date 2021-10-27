@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "app-root-path": "^3.0.0",
-    "chromedriver": "^93.0.1",
+    "chromedriver": "^95.0.0",
     "dateformat": "^4.5.1",
     "googleapis": "^75.0.0",
     "node-schedule": "^2.0.0",
