@@ -5,9 +5,9 @@ const config = require('./config.json');
 const kAwaitMilliSecondWebPageLoading = config.awaitMilliSecondWebPageLoading;
 
 const kSelectorFirstArticleThumnail = "#react-root > section > main > div > div._2z6nI > article > div:nth-child(1) > div > div:nth-child(1) > div:nth-child(1) > a > div > div._9AhH0";
-const kSelectorArticlePublishedDate = "body > div._2dDPU.CkGkG > div.zZYga > div > article > div > div.Igw0E.IwRSH.eGOV_._4EzTm > div > div.eo2As > div.k_Q0X.I0_K8.NnvRN > a > time";
-const kSelectorImage = "body > div._2dDPU.CkGkG > div.zZYga > div > article > div > div._97aPb > div > div.pR7Pc > div.Igw0E.IwRSH.eGOV_._4EzTm.O1flK.D8xaz.fm1AK.TxciK.yiMZG > div > div > div > ul > li:nth-child(2) > div > div > div > div.KL4Bh > img";
-const kClassNameNextArticleButton = " _65Bje  coreSpriteRightPaginationArrow";
+const kSelectorArticlePublishedDate = "body > div._2dDPU.QPGbb.CkGkG > div._32yJO > div > article > div > div.HP0qD > div > div > div.eo2As > div.k_Q0X.I0_K8.NnvRN > a > time";
+const kSelectorImage = "body > div._2dDPU.QPGbb.CkGkG > div._32yJO > div > article > div > div._97aPb.C2dOX.HCDIA > div > div.pR7Pc > div.qF0y9.Igw0E.IwRSH.eGOV_._4EzTm.O1flK.D8xaz.fm1AK.TxciK.yiMZG > div > div > div > ul > li:nth-child(2) > div > div > div > div.KL4Bh > img";
+const kSelectorNextArticleButton = "body > div._2dDPU.QPGbb.CkGkG > div.EfHg9 > div > div > div > button";
 const kClassNameNextImageButton = "coreSpriteRightChevron";
 
 const sleep = (waitTimeInMs) => new Promise(resolve => setTimeout(resolve, waitTimeInMs));
@@ -83,8 +83,8 @@ async function isItLunchMenuArticle(driver) {
 
 async function clickNextArticleButton(driver) {
   try {
-    await driver.wait(until.elementLocated(By.className(kClassNameNextArticleButton)), kAwaitMilliSecondWebPageLoading);
-    const button = await driver.findElement(By.className(kClassNameNextArticleButton));
+    await driver.wait(until.elementLocated(By.css(kSelectorNextArticleButton)), kAwaitMilliSecondWebPageLoading);
+    const button = await driver.findElement(By.css(kSelectorNextArticleButton));
     button.click();
     return true;
   }
